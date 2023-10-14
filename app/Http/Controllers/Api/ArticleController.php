@@ -45,6 +45,7 @@ class ArticleController extends Controller
 
         // Validation passed, continue processing
         $validator['user_id'] = auth('api')->user()->id;
+        $validator['type_user'] = 'user';
 
         $article = Article::create($validator);
         $this->message = __('Article add successfully');
